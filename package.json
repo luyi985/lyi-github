@@ -1,0 +1,47 @@
+{
+  "name": "lyi-github",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "lyi-github": "cli.js"
+  },
+  "scripts": {
+    "dev": "nodemon --watch app/**/**.js --exec npm start",
+    "fmt": "prettier --config .prettierrc --write app/**/*.{js,jsx,json} app/**/**/*.{js,jsx,json}",
+    "lint": "eslint app/**/**/*.js app/**/*.js",
+    "postrelease": "npm publish && git push origin HEAD --follow-tags",
+    "precommit": "lint-staged",
+    "prepush": "npm run fmt && npm run lint && npm test",
+    "release": "npm version",
+    "start": "node app/index.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luyi985/lyi-github.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luyi985/lyi-github/issues"
+  },
+  "homepage": "https://github.com/luyi985/lyi-github#readme",
+  "dependencies": {
+    "config": "^1.31.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "husky": "^0.14.3",
+    "jest": "^23.4.1",
+    "lint-staged": "^7.2.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.13.7"
+  },
+  "lint-staged": {
+    "app/**/**/*.{js,jsx,json}": "prettier --config .prettierrc --write",
+    "app/**/*.{js,jsx,json}": "prettier --config .prettierrc --write"
+  }
+}
