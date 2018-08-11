@@ -13,8 +13,8 @@ const query = ` __schema {
 
 module.exports = (req, res) => {
     request
-    .get('https://api.github.com/graphql')
-    .set('Authorization', `bearer ${process.env.gitToken}`)
-    .send({ query: query })
-    .then(data => res.json(JSON.parse(data.text)))
-}
+        .get('https://api.github.com/graphql')
+        .set('Authorization', `bearer ${process.env.gitToken}`)
+        .send({ query: query })
+        .then(data => res.json(JSON.parse(data.text)));
+};

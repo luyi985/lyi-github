@@ -1,6 +1,6 @@
 const express = require('express');
 const { port } = require('config');
-const githubController = require('./github')
+const githubController = require('./github');
 const app = express();
 
 app.get('/test', (req, res) => {
