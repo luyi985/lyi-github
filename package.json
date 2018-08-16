@@ -1,7 +1,7 @@
 {
   "name": "lyi-github",
   "version": "1.0.0",
-  "description": "",
+  "description": "11",
   "main": "index.js",
   "bin": {
     "lyi-github": "cli.js"
